@@ -1,8 +1,5 @@
-# Ignore node_modules directory
+# Ignore files
 node_modules/
-# Ignore Apple DS_Store
 .DS_Store
-# Ignore dist folder
 dist/
-# Ignore eslint cache file
 .eslintcache
