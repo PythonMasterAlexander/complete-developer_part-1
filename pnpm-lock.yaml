@@ -14,8 +14,30 @@ importers:
       node-fetch:
         specifier: ^3.3.2
         version: 3.3.2
+    devDependencies:
+      '@types/express':
+        specifier: github:types/express
+        version: https://codeload.github.com/types/express/tar.gz/7670cf1cbce96b3159e3ff04a253926b34111220(@types/node@22.13.0)
+      typescript:
+        specifier: ^5.7.3
+        version: 5.7.3
 
 packages:
+
+  '@types/express@https://codeload.github.com/types/express/tar.gz/7670cf1cbce96b3159e3ff04a253926b34111220':
+    resolution: {tarball: https://codeload.github.com/types/express/tar.gz/7670cf1cbce96b3159e3ff04a253926b34111220}
+    version: 4.14.0
+    peerDependencies:
+      '@types/node': '*'
+
+  '@types/node@22.13.0':
+    resolution: {integrity: sha512-ClIbNe36lawluuvq3+YYhnIN2CELi+6q8NpnM7PYp4hBn/TatfboPgVSm2rwKRfnV2M+Ty9GWDFI64KEe+kysA==}
+
+  '@types/serve-static@git+https://github.com/types/npm-serve-static.git#c1f96843c8b96a37f6c534cb1dadb48f5329e4e0':
+    resolution: {commit: c1f96843c8b96a37f6c534cb1dadb48f5329e4e0, repo: https://github.com/types/npm-serve-static.git, type: git}
+    version: 1.11.1
+    peerDependencies:
+      '@types/node': '*'
 
   accepts@1.3.8:
     resolution: {integrity: sha512-PYAthTa2m2VKxuvSD3DPC/Gy+U+sOA1LAuT8mkmRuvw+NACSaeXEQ+NHcVF7rONl6qcaxV3Uuemwawk+7+SJLw==}
@@ -171,6 +193,9 @@ packages:
     resolution: {integrity: sha512-0KI/607xoxSToH7GjN1FfSbLoU0+btTicjsQSWQlh/hZykN8KpmMf7uYwPW3R+akZ6R/w18ZlXSHBYXiYUPO3g==}
     engines: {node: '>= 0.10'}
 
+  isarray@0.0.1:
+    resolution: {integrity: sha512-D2S+3GLxWH+uhrNEcoh/fnmYeP8E8/zHl644d/jdA0g2uyXvy3sb0qxotE+ne0LtccHknQzWwZEzhak7oJ0COQ==}
+
   math-intrinsics@1.1.0:
     resolution: {integrity: sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==}
     engines: {node: '>= 0.4'}
@@ -231,6 +256,10 @@ packages:
 
   path-to-regexp@0.1.12:
     resolution: {integrity: sha512-RA1GjUVMnvYFxuqovrEqZoxxW5NUZqbwKtYz/Tt7nXerk0LbLblQmrsgdeOxV5SFHf0UDggjS/bSeOZwt1pmEQ==}
+
+  path-to-regexp@https://codeload.github.com/pillarjs/path-to-regexp/tar.gz/ec285ed3500aed455df59e3b8b07f473412918a4:
+    resolution: {tarball: https://codeload.github.com/pillarjs/path-to-regexp/tar.gz/ec285ed3500aed455df59e3b8b07f473412918a4}
+    version: 1.5.3
 
   proxy-addr@2.0.7:
     resolution: {integrity: sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg==}
@@ -293,6 +322,14 @@ packages:
     resolution: {integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==}
     engines: {node: '>= 0.6'}
 
+  typescript@5.7.3:
+    resolution: {integrity: sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
+  undici-types@6.20.0:
+    resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
+
   unpipe@1.0.0:
     resolution: {integrity: sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==}
     engines: {node: '>= 0.8'}
@@ -310,6 +347,20 @@ packages:
     engines: {node: '>= 8'}
 
 snapshots:
+
+  '@types/express@https://codeload.github.com/types/express/tar.gz/7670cf1cbce96b3159e3ff04a253926b34111220(@types/node@22.13.0)':
+    dependencies:
+      '@types/node': 22.13.0
+      '@types/serve-static': git+https://github.com/types/npm-serve-static.git#c1f96843c8b96a37f6c534cb1dadb48f5329e4e0(@types/node@22.13.0)
+      path-to-regexp: https://codeload.github.com/pillarjs/path-to-regexp/tar.gz/ec285ed3500aed455df59e3b8b07f473412918a4
+
+  '@types/node@22.13.0':
+    dependencies:
+      undici-types: 6.20.0
+
+  '@types/serve-static@git+https://github.com/types/npm-serve-static.git#c1f96843c8b96a37f6c534cb1dadb48f5329e4e0(@types/node@22.13.0)':
+    dependencies:
+      '@types/node': 22.13.0
 
   accepts@1.3.8:
     dependencies:
@@ -496,6 +547,8 @@ snapshots:
 
   ipaddr.js@1.9.1: {}
 
+  isarray@0.0.1: {}
+
   math-intrinsics@1.1.0: {}
 
   media-typer@0.3.0: {}
@@ -535,6 +588,10 @@ snapshots:
   parseurl@1.3.3: {}
 
   path-to-regexp@0.1.12: {}
+
+  path-to-regexp@https://codeload.github.com/pillarjs/path-to-regexp/tar.gz/ec285ed3500aed455df59e3b8b07f473412918a4:
+    dependencies:
+      isarray: 0.0.1
 
   proxy-addr@2.0.7:
     dependencies:
@@ -623,6 +680,10 @@ snapshots:
     dependencies:
       media-typer: 0.3.0
       mime-types: 2.1.35
+
+  typescript@5.7.3: {}
+
+  undici-types@6.20.0: {}
 
   unpipe@1.0.0: {}
 

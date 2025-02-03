@@ -7,9 +7,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-		"type": "module",
+  "type": "module",
   "dependencies": {
     "express": "^4.21.2",
     "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/express": "github:types/express",
+    "typescript": "^5.7.3"
   }
 }
