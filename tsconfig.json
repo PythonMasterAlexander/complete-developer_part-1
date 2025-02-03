@@ -5,7 +5,5 @@
 				"moduleResolution": "node",
 				"target": "es6",
 				"noImplicitAny": true
-		},
-		"include": [],
-		"exclude": []
+		}
 }
