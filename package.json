@@ -9,8 +9,12 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
     "express": "^4.21.2",
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^3.3.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@types/express": "github:types/express",
