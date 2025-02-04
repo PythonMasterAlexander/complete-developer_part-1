@@ -6,13 +6,19 @@ import express, { Request, Response } from "express";
 const server = express();
 const port = 3000;
 
-//We create one endpoint called /hello
+/*We create one endpoint called /hello
+	You must follow the TypeScript convention of prefixing unused parameters
+	with an underscore
+*/
 server.get('/hello', function(_req: Request, res: Response): void {
 		const response = routeHello();
 		res.send(response);		
 });
 
-//Create endpoint on /api/name" 
+/*Create endpoint on /api/name" 
+	You must follow the TypeScript convention of prefixing unused parameters
+	with an underscore
+*/
 server.get("/api/name", async function (_req: Request, res: Response): Promise<void> {
 		let response: string;
 		try {
