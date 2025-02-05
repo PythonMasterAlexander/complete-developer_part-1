@@ -1,7 +1,6 @@
 // Simple express server from the book/express docs
 import { routeHello, routeAPINames, routeWeather } from "./route.js";
 import express, { Request, Response } from "express";
-// Import the path module from Node.js
 import path from "path";
 
 //Server on port 3000
@@ -51,7 +50,14 @@ server.get(
 server.get(
 		"/components/weather",
 		function (req: Request, res: Response): void {
-				const filePath = path.join(process.cwd(), "public", "index.html");
+				/* Here you need to set the right path
+						 When using node index.js to run the server you need to use the right path
+							The right path is where you keep the file index.js
+						 In this case, when compiling TS to JS the file is compiled to ./dist/src/scripts/index.js
+							When setting the right path in this code, you need to work out the right path from where the 
+							index.js file is located
+				*/
+				const filePath = path.join(process.cwd(), "../../../public", "weather.html");
 				res.setHeader("Content-Type", "text/html");
 				res.sendFile(filePath);
 		}
