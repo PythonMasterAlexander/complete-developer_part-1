@@ -1,6 +1,8 @@
 // Simple express server from the book/express docs
 import { routeHello, routeAPINames, routeWeather } from "./route.js";
 import express, { Request, Response } from "express";
+// Import the path module from Node.js
+import path from "path";
 
 //Server on port 3000
 const server = express();
@@ -34,11 +36,24 @@ server.get("/api/name", async function (_req: Request, res: Response): Promise<v
 		}
 );
 
+/* Create a endpoint called /api/weather/:zipcode */
 server.get(
 		"/api/weather/:zipcode",
 		function (req: Request, res: Response): void {
 				const response = routeWeather({ zipcode: req.params.zipcode });
 				res.send(response);
+		}
+);
+
+/* We use react to show a page at the endpoint /components/weather 
+		This endpoint is created in ./public/index.html 
+*/
+server.get(
+		"/components/weather",
+		function (req: Request, res: Response): void {
+				const filePath = path.join(process.cwd(), "public", "index.html");
+				res.setHeader("Content-Type", "text/html");
+				res.sendFile(filePath);
 		}
 );
 
