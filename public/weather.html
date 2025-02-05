@@ -19,14 +19,18 @@
 												setCount(1);
 										}, []);
 
+										function onButtonClick() {
+												setCount(count + 1);
+										}
+
 										return (
-												<h1 onClick={() => setCount(count + 1)}>
-														The weather is {props.waether},
-														and the count shows {count}
-												</h1>
+												<>
+														<h1>The weather is {props.weather}, and the count shows {count}</h1>
+														<button onClick={onButtonClick}>Press to count</button>
+												</>
 										);
 								}
-								return (<WeatherComponent />);
+								return (<WeatherComponent weather="rainy" />);
 						}
 
 						const container = document.getElementById("root");
