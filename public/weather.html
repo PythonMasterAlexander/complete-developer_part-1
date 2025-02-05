@@ -12,8 +12,10 @@
 				
 				<script type="text/babel">
 						function App() {
-								const WeatherComponent = (props) => {
+								// When using a CDN, you can't use import statements
+								const { useState } = React;
 
+								const WeatherComponent = (props) => {
 										const [count, setCount] = React.useState(0);
 										React.useEffect(() => {
 												setCount(1);
