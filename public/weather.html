@@ -12,23 +12,30 @@
 				
 				<script type="text/babel">
 						function App() {
-								// When using a CDN, you can't use import statements
-								const { useState } = React;
-
 								const WeatherComponent = (props) => {
+										// When using a CDN, you can't use import statements
+										const { useState } = React;
+										const [color, setColor] = useState("blue");
 										const [count, setCount] = React.useState(0);
+
 										React.useEffect(() => {
 												setCount(1);
 										}, []);
 
 										function onButtonClick() {
 												setCount(count + 1);
+												// Change background color to red when the number is even
+												if (count % 2 === 0) {
+														setColor("red");
+												} else {
+														setColor("blue");
+												} 	
 										}
 
 										return (
 												<>
 														<h1>The weather is {props.weather}, and the count shows {count}</h1>
-														<button onClick={onButtonClick}>Press to count</button>
+														<button onClick={onButtonClick} style={{backgroundColor: color}}>Press to count</button>
 												</>
 										);
 								}
